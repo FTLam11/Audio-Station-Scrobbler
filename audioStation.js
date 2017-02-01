@@ -13,8 +13,11 @@ let connection = new Syno({
 
 connection.as.searchSong({'title': 'bowling girl'}, (err, data) => {
   if (err) {
-    console.log(err);
+    console.log("Error: \n", err);
   } else {
-    console.log(data);
+    console.log("Received the following data:\n", data);
   }
 });
+
+// listen for requests by AudioStation
+// or web scrape
