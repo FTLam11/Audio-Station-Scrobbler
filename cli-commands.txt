@@ -1,0 +1,90 @@
+fronk @ /home/fronk 😒 > syno as --help           
+
+  Usage: audiostation|as [options] <method>
+
+  DSM Audio Station API
+
+  Options:
+
+    -h, --help                       output usage information
+    -c, --config <path>              DSM configuration file. Default to ~/.syno/config.yaml
+    -u, --url <url>                  DSM URL. Default to https://admin:password@localhost:5001
+    -p, --payload <payload>          JSON Payload
+    -P, --pretty                     Prettyprint JSON Output
+    -d, --debug                      Enabling Debugging Output
+    -a, --api <version>              DSM API Version. Default to 6.0.2
+    -i, --ignore-certificate-errors  Ignore certificate errors
+
+  Examples:
+
+    $ syno audiostation|as listSongs --payload '{"limit":1}'
+    $ syno audiostation|as listAlbums
+    $ syno audiostation|as searchSong --payload '{"title":"victoria"}'
+
+  Available methods:
+
+    $ syno as reorderPin
+    $ syno as unPin
+    $ syno as renamePin
+    $ syno as pin
+    $ syno as listPins
+    $ syno as getInfoTag
+    $ syno as listTags
+    $ syno as getInfo
+    $ syno as listAlbums
+    $ syno as listComposers
+    $ syno as listGenres
+    $ syno as listDefaultGenres
+    $ syno as listArtists
+    $ syno as listFolders
+    $ syno as getInfoFolder
+    $ syno as listSongs
+    $ syno as searchSong
+    $ syno as getInfoSong
+    $ syno as setRatingSong
+    $ syno as setSharingSong
+    $ syno as getSharingSong
+    $ syno as stream
+    $ syno as transcodeStream
+    $ syno as listRadios
+    $ syno as addRadio
+    $ syno as searchRadio
+    $ syno as updatesRadio
+    $ syno as listPlays
+    $ syno as getInfoPlaylist
+    $ syno as createPlaylist
+    $ syno as deletePlaylist
+    $ syno as renamePlaylist
+    $ syno as copyTolibraryPlaylist
+    $ syno as updatesongsPlaylist
+    $ syno as createSmartPlaylist
+    $ syno as updatesmartPlaylist
+    $ syno as editSharingPlaylist
+    $ syno as savePlayIngPlaylist
+    $ syno as saveSearchPlaylist
+    $ syno as removeMissingPlaylist
+    $ syno as listRemotePlayers
+    $ syno as getInfoRemotePlayer
+    $ syno as getStatusRemotePlayer
+    $ syno as getPlayListRemotePlayer
+    $ syno as updatePlayListRemotePlayer
+    $ syno as controlRemotePlayer
+    $ syno as setMultipleRemotePlayer
+    $ syno as testPasswordRemotePlayer
+    $ syno as setPasswordRemotePlayer
+    $ syno as getStatusRemotePlayerStatus
+    $ syno as getPlayListWebPlayer
+    $ syno as updatePlayListWebPlayer
+    $ syno as getStreamIdProxy
+    $ syno as streamProxy
+    $ syno as getSonginfoProxy
+    $ syno as deleteSonginfoProxy
+    $ syno as getLyrics
+    $ syno as setLyrics
+    $ syno as searchLyricsLyricsSearch
+    $ syno as listMediaServers
+    $ syno as getSongCover
+    $ syno as getFolderCover
+    $ syno as getCover
+    $ syno as download
+    $ syno as listSearches
