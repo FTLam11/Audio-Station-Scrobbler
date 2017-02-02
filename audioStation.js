@@ -11,13 +11,16 @@ let connection = new Syno({
   apiVersion: '6.0.2'
 });
 
-connection.as.searchSong({'title': 'bowling girl'}, (err, data) => {
+let req = (err, data) => {
   if (err) {
     console.log("Error: \n", err);
   } else {
     console.log("Received the following data:\n", data);
   }
-});
+};
+
+connection.as.searchSong({'title': 'bowling girl'}, req);
 
 // listen for requests by AudioStation
 // or web scrape
+// or create own music player
