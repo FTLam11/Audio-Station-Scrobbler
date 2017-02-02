@@ -21,17 +21,10 @@ fronk @ /home/fronk 😒 > syno as --help
     $ syno audiostation|as listAlbums
     $ syno audiostation|as searchSong --payload '{"title":"victoria"}'
 
-  Available methods:
+  Potentially useful API methods:
 
-    $ syno as reorderPin
-    $ syno as unPin
-    $ syno as renamePin
-    $ syno as pin
-    $ syno as listPins
-    $ syno as getInfoTag
-    $ syno as listTags
     $ syno as getInfo
-    
+
     {
       "browse_personal_library": "all",
       "dsd_decode_capability": true,
@@ -70,14 +63,6 @@ fronk @ /home/fronk 😒 > syno as --help
       "version_string": "6.0.2-3093"
     }
 
-    $ syno as listAlbums
-    $ syno as listComposers
-    $ syno as listGenres
-    $ syno as listDefaultGenres
-    $ syno as listArtists
-    $ syno as listFolders
-    $ syno as getInfoFolder
-    $ syno as listSongs
     $ syno as searchSong - takes title as input
 
     {
@@ -106,38 +91,7 @@ fronk @ /home/fronk 😒 > syno as --help
       ]
     }
 
-    $ syno as setRatingSong
-    $ syno as setSharingSong
-    $ syno as getSharingSong
     $ syno as stream
-    $ syno as transcodeStream
-    $ syno as listRadios
-    $ syno as addRadio
-    $ syno as searchRadio
-    $ syno as updatesRadio
-    $ syno as listPlays
-    $ syno as getInfoPlaylist
-    $ syno as createPlaylist
-    $ syno as deletePlaylist
-    $ syno as renamePlaylist
-    $ syno as copyTolibraryPlaylist
-    $ syno as updatesongsPlaylist
-    $ syno as createSmartPlaylist
-    $ syno as updatesmartPlaylist
-    $ syno as editSharingPlaylist
-    $ syno as savePlayIngPlaylist
-    $ syno as saveSearchPlaylist
-    $ syno as removeMissingPlaylist
-    $ syno as listRemotePlayers
-    $ syno as getInfoRemotePlayer
-    $ syno as getStatusRemotePlayer
-    $ syno as getPlayListRemotePlayer
-    $ syno as updatePlayListRemotePlayer
-    $ syno as controlRemotePlayer
-    $ syno as setMultipleRemotePlayer
-    $ syno as testPasswordRemotePlayer
-    $ syno as setPasswordRemotePlayer
-    $ syno as getStatusRemotePlayerStatus
     $ syno as getPlayListWebPlayer - get now playing playlist
 
     {
@@ -169,16 +123,19 @@ fronk @ /home/fronk 😒 > syno as --help
     }
 
     $ syno as updatePlayListWebPlayer
-    $ syno as getStreamIdProxy
-    $ syno as streamProxy
-    $ syno as getSonginfoProxy
-    $ syno as deleteSonginfoProxy
-    $ syno as getLyrics
+    $ syno as getLyrics - makes API call to searchLyricsLyricsSearch by feeding the song ID
+
     $ syno as setLyrics
     $ syno as searchLyricsLyricsSearch
-    $ syno as listMediaServers
-    $ syno as getSongCover
-    $ syno as getFolderCover
-    $ syno as getCover
-    $ syno as download
-    $ syno as listSearches
+
+    {
+      "lyrics": [
+        {
+          "artist": "The Pharcyde",
+          "id": "lyricwiki@Uhh, do you take, Rhymealinda\nDo you love me Tre, do you really love me?\n\tTo be your lawfully, wedded, wife?\n\nUhhh, uhhhhh, I do, I do, no I don't, I do\n\nAh roomie zoom zim, I'm all to be wet\nto Rhymealinda I remember umm, when we first met\nIn eighty-two back in school used to play up all the fools\nSometimes you'd be my number fives sometimes you'd be my twenty-two\nbut umm, screw the dumbshit, cause little Rhymea's true\nI can't wait to say I do and oh yeah honey there's no due\nI got my chariot, rollin, now I'm mic controllin\nGot some spunk in my funk, I can't wait to put some soul in\nWe're rollin all strikes, we're havin[...]\n\n\nNote: LyricWiki is a license restricted plugin. Only a small portion of the lyrics are shown.\n",
+          "partial_lyrics": "Uhh, do you take, Rhymealinda\nDo you love me Tre, do you really love me?\n\tTo be your lawfully, wedded, wife?\n\nUhhh, uhhhhh, I do, I do, no I don't, I do\n\nAh roomie zoom zim, I'm all to be wet\nto Rhymealinda I remember umm, when we first met\nIn eighty-two back in school used to play up all the fools\nSometimes you'd be my number fives sometimes you'd be my twenty-two\nbut umm, screw the dumbshit, cause little Rhymea's true\nI can't wait to say I do and oh yeah honey there's no due\nI got my chariot, rollin, now I'm mic controllin\nGot some spunk in my funk, I can't wait to put some soul in\nWe're rollin all strikes, we're havin[...]\n\n\nNote: LyricWiki is a license restricted plugin. Only a small portion of the lyrics are shown.\n",
+          "plugin": "LyricWiki",
+          "title": "4 Better Or 4 Worse"
+        }
+      ]
+    }
