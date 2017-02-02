@@ -31,6 +31,45 @@ fronk @ /home/fronk 😒 > syno as --help
     $ syno as getInfoTag
     $ syno as listTags
     $ syno as getInfo
+    
+    {
+      "browse_personal_library": "all",
+      "dsd_decode_capability": true,
+      "enable_equalizer": false,
+      "enable_personal_library": false,
+      "enable_user_home": false,
+      "has_music_share": true,
+      "is_manager": true,
+      "playing_queue_max": 8192,
+      "privilege": {
+        "playlist_edit": true,
+        "remote_player": true,
+        "sharing": true,
+        "tag_edit": true,
+        "upnp_browse": true
+      },
+      "remote_controller": false,
+      "same_subnet": true,
+      "serial_number": "1510MQN059500",
+      "settings": {
+        "audio_show_virtual_library": true,
+        "disable_upnp": false,
+        "enable_download": false,
+        "prefer_using_html5": true,
+        "transcode_to_mp3": true
+      },
+      "sid": "Xf8G2zK.wDpjw1510MQN059500",
+      "support_bluetooth": true,
+      "support_usb": true,
+      "support_virtual_library": true,
+      "transcode_capability": [
+        "wav",
+        "mp3"
+      ],
+      "version": 3093,
+      "version_string": "6.0.2-3093"
+    }
+
     $ syno as listAlbums
     $ syno as listComposers
     $ syno as listGenres
