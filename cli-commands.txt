@@ -39,8 +39,34 @@ fronk @ /home/fronk 😒 > syno as --help
     $ syno as listFolders
     $ syno as getInfoFolder
     $ syno as listSongs
-    $ syno as searchSong
-    $ syno as getInfoSong
+    $ syno as searchSong - takes title as input
+
+    {
+      "offset": 0,
+      "songs": [
+        {
+          "id": "music_3688",
+          "path": "/music/[2014] かんこう/01 - bowling girl.mp3",
+          "title": "bowling girl",
+          "type": "file"
+        }
+      ],
+      "total": 1
+    }
+
+    $ syno as getInfoSong - takes id as input
+
+    {
+      "songs": [
+        {
+          "id": "music_3688",
+          "path": "/music/[2014] かんこう/01 - bowling girl.mp3",
+          "title": "bowling girl",
+          "type": "file"
+        }
+      ]
+    }
+
     $ syno as setRatingSong
     $ syno as setSharingSong
     $ syno as getSharingSong
@@ -73,7 +99,36 @@ fronk @ /home/fronk 😒 > syno as --help
     $ syno as testPasswordRemotePlayer
     $ syno as setPasswordRemotePlayer
     $ syno as getStatusRemotePlayerStatus
-    $ syno as getPlayListWebPlayer
+    $ syno as getPlayListWebPlayer - get now playing playlist
+
+    {
+      "current": 0,
+      "mode": "normal",
+      "shuffle": 0,
+      "songs": [
+        {
+          "id": "music_3945",
+          "path": "/music/[2015] Revolution In The Summer ep/01 - Revolution In The Summer.mp3",
+          "title": "Revolution In The Summer",
+          "type": "file"
+        },
+        {
+          "id": "music_3947",
+          "path": "/music/[2015] Revolution In The Summer ep/02 - Eye and my.mp3",
+          "title": "Eye and my",
+          "type": "file"
+        },
+        {
+          "id": "music_3949",
+          "path": "/music/[2015] Revolution In The Summer ep/03 - Salute tomorrow.mp3",
+          "title": "Salute tomorrow",
+          "type": "file"
+        }
+      ],
+      "timestamp": 1486024883,
+      "total": 3
+    }
+
     $ syno as updatePlayListWebPlayer
     $ syno as getStreamIdProxy
     $ syno as streamProxy
