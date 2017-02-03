@@ -1,0 +1,26 @@
+{
+  "name": "audio_station_scrobbler",
+  "version": "1.0.0",
+  "description": "Scrobble tracks played via Synology Audio Station",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTLam11/Audio-Station-Scrobbler.git"
+  },
+  "keywords": [
+    "lastfm",
+    "scrobble",
+    "synology",
+    "audio",
+    "station"
+  ],
+  "author": "Fronk Lom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FTLam11/Audio-Station-Scrobbler/issues"
+  },
+  "homepage": "https://github.com/FTLam11/Audio-Station-Scrobbler#readme"
+}
