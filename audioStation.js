@@ -24,3 +24,5 @@ connection.as.searchSong({'title': 'bowling girl'}, req);
 // listen for requests by AudioStation
 // or web scrape
 // or create own music player
+// or create a *.aum plugin to be called when looking up lyrics on playback
+// AND fire request to docker container express server to make calls to last fm
