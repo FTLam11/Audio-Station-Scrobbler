@@ -7,7 +7,7 @@ let request = {};
 request.get = function(url) {
   return new Promise((resolve, reject) => {
     let req = http.get(url, (res) => {
-      if (res.statusCode == 400) {
+      if ([400, 401, 03, 404].includes(res.statusCode)) {
         reject(new Error(`GET request to ${url} failed, status: ${res.statusCode}`));
       }
 
@@ -18,6 +18,25 @@ request.get = function(url) {
     });
 
     req.on('error', (err) => reject(err));
+  });
+};
+
+request.post = function(options, data) {
+  return new Promise((resolve, reject) => {
+    let req = http.request(options, (res) => {
+      res.setEncoding('utf8');
+      console.log(`STATUS: ${res.statusCode}`);
+      console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
+
+      let body = [];
+
+      res.on('data', (chunk) => body.push(chunk));
+      res.on('end', () => resolve(body.join('')));
+    });
+
+    req.on('error', (err) => reject(err));
+    req.write(data);
+    req.end();
   });
 };
 
