@@ -14,11 +14,11 @@ Complete the following URL with your **API Key** and open it up in your browser.
 
 Log in if neccesary and grant your application permission to your account. Last.fm will redirect to the callback URL. It will be in one of the following URL formats:
 
-  <callback_url>/?token=xxx
+    <callback_url>/?token=xxx
 
 or
 
-  <callback_url>&token=xxx
+    <callback_url>&token=xxx
 
 Take note of this authorization token, it is tied to your user account and **API Key**. The token is valid for 60 minutes.
 
