@@ -22,11 +22,17 @@ or
 
     <callback_url>&token=xxx
 
-Take note of this authorization token, it is tied to your user account and **API Key**. The token is valid for 60 minutes.
+Take note of this **authorization token**, it is tied to your user account and **API Key**. The token is valid for 60 minutes.
 
 ## Craft API Signature
 
-Getting a **session key** as well as making scrobble requests require you to generate an API signature **every single time**. To get a session key navigate to __ in your browser.
+Obtaining a **session key** and scrobbling are both requests that require an **API signature**. To get a **session key**, complete the following URL with your **API Key**, **authorization token**, and **API Secret**.
+
+    http://localhost:3000/auth/q?api_key=xxx&token=xxx&secret=xxx
+
+Audio Station Scrobbler will request a **session key** from Last.fm. Provided all the information you provided is correct,  
+
+
 
 
 

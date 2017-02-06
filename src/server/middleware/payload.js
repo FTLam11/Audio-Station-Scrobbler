@@ -21,13 +21,13 @@ let payload = {};
 
 payload.squish = function() {
   return (req, res, next) => {
-    req.body.api_signature = '';
+    req.body.api_sig = '';
     for (var key in req.body) {
       if (req.body.hasOwnProperty(key) && key != 'format' && key != 'secret') {
-        req.body.api_signature += key + req.body[key];
+        req.body.api_sig += key + req.body[key];
       };
     };
-    req.body.api_signature += req.body.secret;
+    req.body.api_sig += req.body.secret;
     next();
   };
 };
