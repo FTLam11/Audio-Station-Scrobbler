@@ -4,13 +4,15 @@ Not being able to scrobble tracks with Audio Station is no bueno. After brainsto
 
 ## Create API Account
 
-To use the Last.fm API, (sign up for an account)[http://www.last.fm/api/account/create]. Zang, now you have your own **API Key** and **API Secret**. Set the callback URL to localhost:3000/auth.
+To use the Last.fm API, [sign up for an account](http://www.last.fm/api/account/create). Zang, now you have your own **API Key** and **API Secret**. Set the **callback URL** to:
+
+    localhost:3000/auth
 
 ## Grant Application Permissions
 
 Complete the following URL with your **API Key** and open it up in your browser.
 
-  http://www.last.fm/api/auth/?api_key=xxx
+    http://www.last.fm/api/auth/?api_key=xxx
 
 Log in if neccesary and grant your application permission to your account. Last.fm will redirect to the callback URL. It will be in one of the following URL formats:
 
