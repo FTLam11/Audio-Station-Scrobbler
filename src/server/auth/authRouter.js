@@ -3,22 +3,10 @@
 const express = require('express');
 const authRouter = express.Router();
 const controller = require('./authController');
+const parse = require('../middleware/parse');
+const payload = require('../middleware/payload');
 
-authRouter.param('id', controller.params);
-
-authRouter.route('/')
-  .get(controller.index)
-  .post(controller.create)
-
-authRouter.route('/new')
-  .get(controller.new)
-
-authRouter.route('/:id')
-  .get(controller.show)
-  .put(controller.update)
-  .delete(controller.destroy)
-
-authRouter.route('/:id/edit')
-  .get(controller.edit)
+authRouter.route(/\/q/)
+  .get(parse(), payload.squish(), controller.session)
 
 module.exports = authRouter;
