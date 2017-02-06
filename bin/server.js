@@ -11,5 +11,5 @@ let io = require('socket.io')(server);
 sockets.init(io);
 
 server.listen(config.port, () => {
-  log(`Express server listening on port *:${config.port}`);
+  log.log(`Express server listening on port *:${config.port}`);
 });
