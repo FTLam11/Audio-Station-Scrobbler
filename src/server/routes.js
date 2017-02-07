@@ -5,7 +5,7 @@ const authRouter = require('./auth/authRouter');
 const trackRouter = require('./track/trackRouter');
 
 router.get('/', function(req, res) {
-  res.send('Scrawble dat track jo!');
+  res.send('Scrawble dat track j0!');
 });
 
 router.use('/auth', authRouter);
