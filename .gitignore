@@ -38,3 +38,6 @@ jspm_packages
 
 # Sandbox
 sandbox.js
+
+# Environment variables store
+env.js
