@@ -8,7 +8,8 @@ const squish = require('../middleware/payload');
 const sign = require('../middleware/signature');
 
 trackRouter.route('/scrobbles')
-  .post(payload.build(), controller.create)
+  // .post(payload.build(), controller.create)
+  .post(controller.test)
   .get(controller.test)
 
 module.exports = trackRouter; 

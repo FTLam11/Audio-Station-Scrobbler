@@ -6,14 +6,15 @@ let payload = {};
 
 payload.build = function() {
   return (req, res, next) => {
-      req.body.album = album;
-      req.body.api_key = config.api_key;
-      req.body.artist = artist;
-      req.body.format = 'json';
-      req.body.method = method;
-      req.body.sk = config.sk;
-      req.body.timestamp = Math.floor(new Date() / 1000);
-      req.body.track = track;
+      // req.body.album = album;
+      // req.body.api_key = config.api_key;
+      // req.body.artist = artist;
+      // req.body.format = 'json';
+      // req.body.method = method;
+      // req.body.sk = config.sk;
+      // req.body.timestamp = Math.floor(new Date() / 1000);
+      // req.body.track = track;
+      next();
   };
 };
 
