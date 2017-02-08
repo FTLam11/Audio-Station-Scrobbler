@@ -4,20 +4,18 @@ const config = require('../../../config');
 
 let payload = {};
 
-// payload.data = function(album, artist, method, track) {
-//   return () => {
-//     return {
-//       album: album,
-//       api_key: config.api_key,
-//       artist: artist,
-//       format: 'json',
-//       method: method,
-//       sk: config.sk,
-//       timestamp: Math.floor(new Date() / 1000),
-//       track: track
-//     };
-//   };
-// };
+payload.build = function() {
+  return (req, res, next) => {
+      req.body.album = album;
+      req.body.api_key = config.api_key;
+      req.body.artist = artist;
+      req.body.format = 'json';
+      req.body.method = method;
+      req.body.sk = config.sk;
+      req.body.timestamp = Math.floor(new Date() / 1000);
+      req.body.track = track;
+  };
+};
 
 payload.squish = function() {
   return (req, res, next) => {
