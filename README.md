@@ -4,7 +4,7 @@ Not being able to scrobble tracks with Audio Station is no bueno. After brainsto
 
 ## Authorization
 
-This section details how to obtain an API account and obtain the necessary information to scrobble your music.
+This section explains how to obtain an API account and get the necessary information to scrobble your music. The specific API method used is [auth.getSession](https://www.last.fm/api/show/auth.getSession).
 
 ### Create API Account
 
@@ -38,4 +38,24 @@ Audio Station Scrobbler will request a **session key** from Last.fm. Provided al
 
 ## Scrobbling
 
-#
+This section explains how to update the "Now Playing" status of your profile and how to scrobble your music. The API methods used are [track.updateNowPlaying](https://www.last.fm/api/show/track.updateNowPlaying) and [track.scrobble](https://www.last.fm/api/show/track.scrobble).
+
+### Roflmao
+
+Well, there shouldn't be anything else for you to do. Go listen to some tunes!
+
+## Contribution
+
+* Clone this repository
+* Create a new feature or fix branch
+* Write tests to accompany your feature or fix
+* Develop your feature or fix
+* Commit early and often
+* Pass your tests
+* Push up your branch and submit a pull request
+
+## Contact
+
+Email ["Fronk"](ryzingsun11@yahoo.com).
+
+# AAAHHHHHHH SHIIIIIEEEEEEEEEETTTTTTTTTT
