@@ -14,7 +14,7 @@ controller.session = (req, res, next) => {
       saveToEnv('api_key', req.body.api_key)();
       saveToEnv('secret', req.body.secret)();
       saveToEnv('sk', json.session.key)();
-      res.json(lastfmres);
+      next();
     })
     .catch((err) => {
       next(err);
