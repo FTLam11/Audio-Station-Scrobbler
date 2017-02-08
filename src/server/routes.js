@@ -10,6 +10,6 @@ router.get('/', function(req, res) {
 
 router.use('/auth', authRouter);
 
-router.use('/tracks', trackRouter);
+router.use('/scrobbles', trackRouter);
 
 module.exports = router;

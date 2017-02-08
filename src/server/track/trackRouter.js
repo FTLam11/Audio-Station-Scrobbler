@@ -7,7 +7,7 @@ const payload = require('../middleware/payload');
 const squish = require('../middleware/payload');
 const sign = require('../middleware/signature');
 
-trackRouter.route('/scrobbles')
+trackRouter.route('/')
   // .post(payload.build(), controller.create)
   .post(controller.test)
   .get(controller.test)
