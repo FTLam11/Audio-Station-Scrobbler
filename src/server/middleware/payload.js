@@ -29,7 +29,6 @@ payload.squish = function() {
     };
     raw += req.body.secret;
     req.body.api_sig = raw;
-    console.log(req.body.api_sig);
     next();
   };
 };
