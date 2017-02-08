@@ -4,7 +4,8 @@
   "description": "Scrobble tracks played via Synology Audio Station",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "NODE_ENV=test mocha src/server/test",
+    "start": "node bin/server.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "colors": "^1.1.2",
+    "mocha": "^3.2.0",
+    "node-mocks-http": "^1.5.6"
   }
 }
