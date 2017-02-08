@@ -9,6 +9,6 @@ const sign = require('../middleware/signature');
 const env = require('../middleware/loadEnv');
 
 authRouter.route(/\/q/)
-  .get(parse(), payload.squish(), sign(), controller.session, env())
+  .get(parse(), payload.squish(), sign(), controller.session, env(), controller.end)
 
 module.exports = authRouter;

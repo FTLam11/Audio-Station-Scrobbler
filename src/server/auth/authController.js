@@ -21,4 +21,8 @@ controller.session = (req, res, next) => {
     })
 };
 
+controller.end = (req, res, next) => {
+  res.json("Time to listen to some tunes j0.");
+}
+
 module.exports = controller;
