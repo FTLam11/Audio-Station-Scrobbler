@@ -21,7 +21,7 @@ controller.create = (req, res, next) => {
 }
 
 controller.test = (req, res, next) => {
-  // console.log(req);
+  console.log(req);
   res.json(req);
 }
 
