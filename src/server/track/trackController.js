@@ -21,8 +21,8 @@ controller.create = (req, res, next) => {
 }
 
 controller.test = (req, res, next) => {
-  console.log(req);
-  res.json(req);
+  console.log("SUP DAWG");
+  res.json("We fucking did it");
 }
 
 module.exports = controller;
