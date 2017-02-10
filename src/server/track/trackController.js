@@ -18,6 +18,10 @@ controller.create = (req, res, next) => {
   request.post(options, dataString);
   console.log(request);
   // res.json("AWwWWWWWW Shiiiiiiiiiiiiieeeeeeeeeeeet");
+  // create a scrobbling queue, since NAS submits 
+  // lyric requests for the currently playing song
+  // and the next song in playlist
+  // Last.fm uses 4 minutes as the time interval for scrobbles
 }
 
 controller.test = (req, res, next) => {
