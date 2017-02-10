@@ -6,7 +6,7 @@ let string = {};
 
 module.exports = function() {
   return (req, res, next) => {
-    req.body = querystring.stringify(req.body);
+    req.body.dataString = querystring.stringify(req.body);
     next();
   };
 };
