@@ -1,19 +1,19 @@
 'use strict';
 
-const config = require('../../../config');
+require('../../../env');
 
 let payload = {};
 
 payload.build = function() {
   return (req, res, next) => {
       // req.body.album = album;
-      // req.body.api_key = config.api_key;
-      // req.body.artist = artist;
-      // req.body.format = 'json';
-      // req.body.method = method;
-      // req.body.sk = config.sk;
-      // req.body.timestamp = Math.floor(new Date() / 1000);
-      // req.body.track = track;
+      req.body.api_key = process.env.API_KEY;
+      req.body.artist = req.query.artist;
+      req.body.format = 'json';
+      req.body.method = 'track.scrobble';
+      req.body.sk = process.env.SK;
+      req.body.timestamp = Math.floor(new Date() / 1000);
+      req.body.track = req.query.title;
       next();
   };
 };
@@ -26,7 +26,11 @@ payload.squish = function() {
         raw += key + req.body[key];
       };
     };
-    raw += req.body.secret;
+    if (req.body.secret) {
+      raw += req.body.secret;
+    } else {
+      raw += process.env.SECRET;
+    }
     req.body.api_sig = raw;
     next();
   };
