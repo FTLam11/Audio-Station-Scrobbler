@@ -1,5 +1,7 @@
 'use strict';
 
+require('../env');
+
 const http = require('http');
 const config = require('../config');
 const app = require('../src/server/webapp');
