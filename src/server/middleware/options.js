@@ -1,5 +1,6 @@
 'use strict';
 
+// Set options for POST request to Last.FM
 module.exports = function() {
   return (req, res, next) => {
     req.body.options = {

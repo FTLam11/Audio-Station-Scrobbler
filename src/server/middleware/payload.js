@@ -4,10 +4,9 @@ require('../../../env');
 
 let payload = {};
 
+// Build payload for track.scrobble and track.updateNowPlaying
 payload.build = function() {
   return (req, res, next) => {
-    console.log(req.query);
-    // req.body.album = album;
     req.body.api_key = process.env.API_KEY;
     req.body.artist = req.query.artist;
     req.body.format = 'json';
@@ -19,19 +18,23 @@ payload.build = function() {
   };
 };
 
+// Concatenate payload into raw api signature
 payload.squish = function() {
   return (req, res, next) => {
     let raw = '';
+
     for (var key in req.body) {
       if (req.body.hasOwnProperty(key) && key != 'format' && key != 'secret') {
         raw += key + req.body[key];
       };
     };
+
     if (req.body.secret) {
       raw += req.body.secret;
     } else {
       raw += process.env.SECRET;
-    }
+    };
+
     req.body.api_sig = raw;
     next();
   };

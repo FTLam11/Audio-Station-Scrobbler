@@ -2,6 +2,7 @@
 
 const log = require('../../util/log');
 
+// Catch all error handler
 module.exports = () => {
   return function(err, req, res, next) {
     if (err) {

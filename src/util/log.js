@@ -3,7 +3,6 @@
 let log = {};
 
 let logger = (method = 'log', string) => {
-  // if (!console || !console[method]) return;
   if (method === 'error') {
     console.log(`[ ❌ scrawble ERROR ❌ ] ${string}`)
   } else {
@@ -12,6 +11,5 @@ let logger = (method = 'log', string) => {
 };
 
 log.log = (string) => logger('log', string);
-log.error = (string) => logger('error', string);
 
 module.exports = log;
