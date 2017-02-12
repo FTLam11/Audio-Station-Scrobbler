@@ -2,9 +2,9 @@
 
 // Parse request for Last.FM auth token
 let validParams = function(queryObj) {
-  return queryObj.api_key != null &&
-             queryObj.token != null &&
-             queryObj.secret != null;
+  return queryObj.api_key &&
+             queryObj.token &&
+             queryObj.secret;
 };
 
 module.exports = function() {
