@@ -26,6 +26,11 @@ For example, in my environment this line is:
 
     exec /usr/local/bin/node /usr/fronk/Audio-Station-Scrobbler/bin.server.js
 
+    touch env.js
+
+    install NPM/sudo
+    logger: default parameters error out in Node v4
+
 ## Authorization
 
 This section explains how to obtain an API account and get the necessary information to scrobble your music. The specific API method used is [auth.getSession](https://www.last.fm/api/show/auth.getSession).
