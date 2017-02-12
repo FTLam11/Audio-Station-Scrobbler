@@ -80,6 +80,8 @@ Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fro
 
 ## Contribution
 
+Suggestions and improvements are welcome!
+
 * Clone this repository
 * Create a new feature or fix branch
 * Write tests to accompany your feature or fix
@@ -87,9 +89,5 @@ Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fro
 * Commit early and often
 * Pass your tests
 * Push up your branch and submit a pull request
-
-## Contact
-
-Email ["Fronk"](ryzingsun11@yahoo.com).
 
 # AAAHHHHHHH SHIIIIIEEEEEEEEEETTTTTTTTTT
