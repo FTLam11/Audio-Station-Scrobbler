@@ -12,15 +12,17 @@ describe('(>")>Env Middleware<("<)'.america, function() {
   beforeEach(function(done) {
     req = httpMock.createRequest({
       method: 'GET',
-      url: '/auth',
+      url: '/auth'
     });
     res = httpMock.createResponse();
     done();
   });
 
   it('should load all environment variables contained in env.js', function(done) {
-    loadEnv()(req, res, () => console.log("Stand-in"));
+    loadEnv()(req, res, () => console.log("Next"));
     expect(process.env.API_KEY).to.not.be.an('undefined');
+    expect(process.env.SECRET).to.not.be.an('undefined');
+    expect(process.env.SK).to.not.be.an('undefined');
     done();
   });
 });
