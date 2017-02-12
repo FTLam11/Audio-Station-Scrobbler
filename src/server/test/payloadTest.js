@@ -42,7 +42,7 @@ describe('(>")>Payload Middleware #Build<("<)'.america, function() {
     done();
   });
 
-  it('should build the  for scrobble requests', function(done) {
+  it('should build the payload for scrobble requests', function(done) {
     expect(req.body.artist).to.equal('TRUONGS');
     expect(req.body.track).to.equal('NUOCNAM');
     expect(req.body).to.have.all.keys(['api_key', 'artist', 'format', 'method', 'sk', 'timestamp', 'track']);
