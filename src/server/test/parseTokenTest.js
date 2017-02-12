@@ -39,12 +39,18 @@ describe('(>")>Parse Token Middleware<("<)'.america, function() {
     done();
   });
 
-  xit('throws an error if any parameters are missing', function(done) {
+  it('throws an error if any parameters are missing', function(done) {
     req = httpMock.createRequest({
       method: 'GET',
       url: '/auth/q?api_key=123&token=456'
     });
     res = httpMock.createResponse();
+    let parseErr = new Error("Missing parameters for session request.");
+    let next = function() { throw parseErr };
+    
+    expect(function() {
+      parseToken()(req, res, next)
+    }).to.throw(parseErr);
     done();
   });  
 });
