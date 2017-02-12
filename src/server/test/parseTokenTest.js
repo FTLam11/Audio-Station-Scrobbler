@@ -15,7 +15,7 @@ describe('(>")>Parse Token Middleware<("<)'.america, function() {
       url: '/auth/q?api_key=123&token=456&secret=789'
     });
     res = httpMock.createResponse();
-    parseToken()(req, res, () => console.log("Next"));
+    parseToken()(req, res, () => {});
     done();
   });
 

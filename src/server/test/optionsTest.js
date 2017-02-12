@@ -15,7 +15,7 @@ describe('(>")>Options Middleware<("<)'.america, function() {
       url: '/tracks/q?artist=truongs&title=nuocnam'
     });
     res = httpMock.createResponse();
-    options()(req, res, () => console.log("Next"));
+    options()(req, res, () => {});
     done();
   });
 

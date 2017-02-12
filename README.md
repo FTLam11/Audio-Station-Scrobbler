@@ -38,11 +38,14 @@ Audio Station Scrobbler will request a **session key** from Last.fm. Provided al
 
 ## Scrobbling
 
-This section explains how to update the "Now Playing" status of your profile and how to scrobble your music. The API methods used are [track.updateNowPlaying](https://www.last.fm/api/show/track.updateNowPlaying) and [track.scrobble](https://www.last.fm/api/show/track.scrobble).
+This section explains how to update the "Now Playing" status of your profile and how to scrobble your music. The API methods used are:
 
-### Roflmao
+* [track.updateNowPlaying](https://www.last.fm/api/show/track.updateNowPlaying)
+* [track.scrobble](https://www.last.fm/api/show/track.scrobble)
 
-Well, there shouldn't be anything else for you to do. Go listen to some tunes!
+### Install plugin
+
+Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fronk).
 
 ## Contribution
 

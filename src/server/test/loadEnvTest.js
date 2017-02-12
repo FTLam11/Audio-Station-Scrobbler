@@ -19,7 +19,7 @@ describe('(>")>Env Middleware<("<)'.america, function() {
   });
 
   it('should load all environment variables contained in env.js', function(done) {
-    loadEnv()(req, res, () => console.log("Next"));
+    loadEnv()(req, res, () => {});
     expect(process.env.API_KEY).to.not.be.an('undefined');
     expect(process.env.SECRET).to.not.be.an('undefined');
     expect(process.env.SK).to.not.be.an('undefined');
