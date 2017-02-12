@@ -4,17 +4,27 @@ Not being able to scrobble tracks with Audio Station is no bueno. After brainsto
 
 I sniffed the network traffic while using Audio Station and noted the patterns of requests during playback of each song. The workaround for scrobbling when playing music via Audio Station is a two-part scheme:
 
-* Lyric modules can be installed in Audio Station. With a lyric module installed, Audio Station makes lyric queries for each song. The [Synology Lyric repository](https://bitbucket.org/franklai/synologylyric/overview) was conveniently available. I just needed ninja a new scrobble request into the lyric module. My lyric module is found [here](https://github.com/FTLam11/lyrical_fronk).
-* This repository contains a simple Node server that saves a session and scrobbles music. 
+* Lyric modules can be installed in Audio Station. With a lyric module installed, Audio Station makes lyric queries for each song and displays them. The [Synology Lyric repository](https://bitbucket.org/franklai/synologylyric/overview) was conveniently available. I just needed ninja a new scrobble request into the lyric module. My lyric module is found [here](https://github.com/FTLam11/lyrical_fronk).
+* This repository contains a simple Node server that saves a Last.FM session and scrobbles music. 
 
 ## Installing and Running Server Code
 
 ### System Requirements
 
-* Your Synology NAS needs to have NodeJS v4 or above installed. It can be installed via Package Center, or you can download the source code from [NodeJS](https://nodejs.org/en/download/) and include it in your PATH.
+* Your Synology NAS needs to have NodeJS v4 or above installed. It can be installed via Package Center, or you can download the source code from [NodeJS](https://nodejs.org/en/download/) and include it in your $PATH.
 * You need to [enable SSH](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/system_terminal) on your Synology NAS. 
 * You'll be SSH'ing into your Synology NAS, so an SSH client will be required as well. Check t3h g00gles for a suitable SSH client for your operating system. **You need admin privileges for your Synology NAS.** Refer to this help [article](https://www.synology.com/en-us/knowledgebase/DSM/tutorial/General/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet) for an example.
-* UPSTART SCRIPT
+* After installing Node and SSH'ing into your Synology NAS, you might need to edit *scrobbler.conf*. Run this command to determine where Node resides:
+
+    which node
+
+Replace the last line with the following:
+
+    exec node_location bin/server.js_location
+
+For example, in my environment this line is:
+
+    exec /usr/local/bin/node /usr/fronk/Audio-Station-Scrobbler/bin.server.js
 
 ## Authorization
 

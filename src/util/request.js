@@ -7,10 +7,6 @@ let request = {};
 request.get = function(url) {
   return new Promise((resolve, reject) => {
     let req = http.get(url, (res) => {
-      if ([400, 401, 403, 404].includes(res.statusCode)) {
-        reject(new Error(`GET request to ${url} failed, status: ${res.statusCode}`));
-      }
-
       let body = [];
 
       res.on('data', (chunk) => body.push(chunk));
