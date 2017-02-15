@@ -2,7 +2,7 @@
 
 let log = {};
 
-let logger = (method = 'log', string) => {
+let logger = (method, string) => {
   if (method === 'error') {
     console.log(`[ ❌ scrawble ERROR ❌ ] ${string}`)
   } else {
