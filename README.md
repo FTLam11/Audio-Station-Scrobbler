@@ -18,7 +18,7 @@ I sniffed the network traffic while using Audio Station and noted HTTP request p
 
 ### Configuration
 
-* After installing Node and SSH'ing into your Synology NAS, you might need to edit *scrobbler.sh*. Run this command to determine where Node resides:
+After installing Node and SSH'ing into your Synology NAS, you might need to edit *scrobbler.sh*. Run this command to determine where Node resides:
 
     which node
 
@@ -30,7 +30,9 @@ For example, in my environment this line is:
 
     exec /usr/local/bin/node /usr/fronk/Audio-Station-Scrobbler/bin/server.js
 
-* Navigate to the root directory of Audio Station Scrobbler and run these commands. Create a file to store your Last.FM API and session info:
+Put `scrobbler.sh` in `/usr/local/etc/rc.d`. This starts the server automatically when your Synology NAS boots up. Likewise, the server process shuts down along with your NAS.
+
+Navigate to the root directory of Audio Station Scrobbler and run these commands. Create a file to store your Last.FM API and session info:
 
     touch env.js
 
@@ -63,9 +65,11 @@ or
 
     <callback_url>&token=xxx
 
-Take note of this **authorization token**, it is tied to your user account and **API key**. The token is valid for 60 minutes.
+Take note of this **authorization token**, it is tied to your user account and **API key**. The token is valid for 60 minutes. Don't worry about expiration, you can request new tokens.
 
 ### Craft API Signature
+
+SSH into machine? Manually edit env.js?
 
 Obtaining a **session key** and scrobbling are both requests that require an **API signature**. To get a **session key**, complete the following URL with your **API key**, **authorization token**, and **API secret**.
 
