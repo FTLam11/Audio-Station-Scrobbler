@@ -11,5 +11,6 @@ let logger = (method = 'log', string) => {
 };
 
 log.log = (string) => logger('log', string);
+log.error = (string) => logger('error', string);
 
 module.exports = log;
