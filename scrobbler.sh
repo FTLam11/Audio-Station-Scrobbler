@@ -3,7 +3,6 @@
 case "$1" in
   stop)
     echo "Shutting down Audio Station Scrobbler..."
-    kill "`cat XX`"
     ;;
   start)
     echo "Booting up Audio Station Scrobbler..."
