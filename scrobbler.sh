@@ -7,7 +7,7 @@ case "$1" in
     ;;
   start)
     echo "Booting up Audio Station Scrobbler..."
-    exec /usr/local/bin/node /usr/fronk/Audio-Station-Scrobbler/bin.server.js
+    exec /usr/local/bin/node /volume1/zCode/Audio-Station-Scrobbler/bin/server.js
     ;;
   restart)
     $0 stop
