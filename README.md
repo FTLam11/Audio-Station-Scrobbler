@@ -26,18 +26,16 @@ I have no clue what your system environment is like, but I'll attempt to provide
 ### Configuration
 
 1. SSH into your NAS. Run `sudo -i` to switch to the root user. Navigate into the uploaded directory from the previous section.
-2. Install dependencies by running `npm install`. Start the server by running `node bin/server.js`.
+2. Install dependencies by running `npm install`. Start the server by running `npm start`.
 3. In DSM, go to **Control Panel** > **Task Scheduler**. You will create a task to automatically run the server whenever your NAS boots up.
 4. Click **Create** -> **Triggered Task** -> **User-defined script**. 
 5. In the **General** tab, enter a task name and then check the **Enabled** box.
 6. In the **Task Settings** tab, edit and paste the following: 
 
     exec /usr/local/bin/node path_to_scrobbler_directory/bin/server.js_location
-
 For example, in my environment this is:
 
     exec /usr/local/bin/node /volume1/code/Audio-Station-Scrobbler/bin/server.js
-
 7. Click **OK** to save this task.
 
 Keep your SSH connection open so the server can continue to run for now. It's necessary for the following section.
