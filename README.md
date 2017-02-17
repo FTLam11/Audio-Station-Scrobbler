@@ -7,7 +7,7 @@ I sniffed the network traffic while using Audio Station and noted HTTP request p
 * Lyric modules are an Audio Station built-in feature. With a lyric module installed, Audio Station makes queries for each song and displays lyrics if found. A variety of [Synology Lyric modules](https://bitbucket.org/franklai/synologylyric/overview) are publically available. I ninja'd a new scrobble request into one of the lyric modules. My modified lyric module is found [here](https://github.com/FTLam11/lyrical_fronk).
 * This repository contains a simple Node server that saves a Last.FM session and scrobbles music. 
 
-## Installing and Running Server Code
+## I. Installing and Running Server Code
 
 ### System Requirements
 
@@ -32,15 +32,17 @@ I have no clue what your system environment is like, but I'll attempt to provide
 5. In the **General** tab, enter a task name and then check the **Enabled** box.
 6. In the **Task Settings** tab, edit and paste the following: 
 
-    exec /usr/local/bin/node path_to_scrobbler_directory/bin/server.js_location
-For example, in my environment this is:
+    `exec /usr/local/bin/node path_to_scrobbler_directory/bin/server.js_location`
 
-    exec /usr/local/bin/node /volume1/code/Audio-Station-Scrobbler/bin/server.js
+    For example, in my environment this is:
+
+    `exec /usr/local/bin/node /volume1/code/Audio-Station-Scrobbler/bin/server.js`
+
 7. Click **OK** to save this task.
 
 Keep your SSH connection open so the server can continue to run for now. It's necessary for the following section.
 
-## Last.fm Authorization
+## II. Last.fm Authorization
 
 This section explains how to obtain an API account and get the necessary information to scrobble your music.
 
@@ -68,11 +70,11 @@ Complete the following URL with your **API key**, **authorization token**, and *
 
 Your NAS will request a **session key** from Last.fm. Provided all the information you provided is correct, your **API key**, **API secret**, and **session key* will be stored in the environment of your NAS.
 
-## Install plugin
+## III. Install plugin
 
 Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fronk).
 
-## Restart server
+## IV. Restart server
 
 Restart your NAS in order for the scrobbling server to automatically run in the background. That's all folks, get scrobbling!
 
