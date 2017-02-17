@@ -70,13 +70,17 @@ Complete the following URL with your **API key**, **authorization token**, and *
 
 Your NAS will request a **session key** from Last.fm. Provided all the information you provided is correct, your **API key**, **API secret**, and **session key* will be stored in the environment of your NAS.
 
-### Install plugin
+## Install plugin
 
 Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fronk).
 
-### Restart server
+## Restart server
 
 Restart your NAS in order for the scrobbling server to automatically run in the background. That's all folks, get scrobbling!
+
+## To-Dos
+
+* Update "Now Playing" 
 
 ## Contribution
 
