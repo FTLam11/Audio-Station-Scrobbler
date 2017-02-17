@@ -60,7 +60,7 @@ Complete the following URL with your **API key** and open it up in your browser.
 
     http://www.last.fm/api/auth/?api_key=xxx
 
-Log in if neccesary and grant your application permission to your account. Last.fm will redirect to the callback URL you specified earlier. Take note the displayed **authorization token**, it is tied to your user account and **API key** and is valid for 60 minutes.
+Log in if neccesary and grant your application permission to your account. Last.fm will redirect to the callback URL you specified earlier. Take note of the displayed **authorization token**, it is tied to your user account and **API key** and is valid for 60 minutes.
 
 ### Get Session Key
 
@@ -68,7 +68,7 @@ Complete the following URL with your **API key**, **authorization token**, and *
 
     local_address_of_your_nas:3000/auth/q?api_key=xxx&token=xxx&secret=xxx
 
-Your NAS will request a **session key** from Last.fm. Provided all the information you provided is correct, your **API key**, **API secret**, and **session key* will be stored in the environment of your NAS.
+Your NAS will request a **session key** from Last.fm. Provided all the information you provided is correct, your **API key**, **API secret**, and **session key* will be stored in the environment of your NAS. The lifetime of session keys are infinite according to Last.fm.
 
 ## III. Install plugin
 
