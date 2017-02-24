@@ -32,7 +32,7 @@ I have no clue what your system environment is like, but I'll attempt to provide
 5. In the **General** tab, enter a task name and then check the **Enabled** box.
 6. In the **Task Settings** tab, edit and paste the following: 
 
-    `exec /usr/local/bin/node path_to_scrobbler_directory/bin/server.js_location`
+    `exec /usr/local/bin/node path_to_scrobbler_directory/bin/server.js`
 
     For example, in my environment this is:
 
