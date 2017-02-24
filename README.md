@@ -48,7 +48,7 @@ This section explains how to obtain an API account and get the necessary informa
 
 ### Create API Account
 
-To use the Last.fm API, [sign up for an account](http://www.last.fm/api/account/create). The only field that matters is **Callback URL**. Set the **Callback URL** to:
+To use the Last.fm API, [sign up for an account](http://www.last.fm/api/account/create). The only field that matters is **Callback URL**. Set **Callback URL** to:
 
     local_address_of_your_nas:3000
 
@@ -68,7 +68,7 @@ Complete the following URL with your **API key**, **authorization token**, and *
 
     local_address_of_your_nas:3000/auth/q?api_key=xxx&token=xxx&secret=xxx
 
-Your NAS will request a **session key** from Last.fm. Provided all the information you provided is correct, your **API key**, **API secret**, and **session key** will be stored your NAS environment. The lifetime of session keys are infinite according to Last.fm.
+Your NAS will request a **session key** from Last.fm. Assuming all the information you provided is correct, your **API key**, **API secret**, and **session key** will be stored your NAS environment. According to Last.fm, the lifetime of session keys are infinite.
 
 You can close your SSH connection now. Proceed to plugin installation.
 
@@ -79,6 +79,10 @@ Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fro
 ## IV. Restart Server
 
 Restart your NAS in order for the scrobbling server to automatically run in the background. That's all folks, get scrobbling!
+
+## Limitations/Known Issues
+
+* 
 
 ## To-Dos
 
