@@ -80,9 +80,10 @@ Install the plugin from this [repository](https://github.com/FTLam11/lyrical_fro
 
 Restart your NAS in order for the scrobbling server to automatically run in the background. That's all folks, get scrobbling!
 
-## Limitations/Known Issues
+## Limitations/Potential Issues
 
-* 
+* When playing music via playlist, Audio Station queries lyrics for the current song *and* the following song. Therefore, your NAS will submit two scrobbles back-to-back. I assumed Last.fm would reject the second scrobble, however that is not the case.
+* If `env.js` is lost, you'll need to start the entire setup/installation process over again since your API information and session key are stored. Alternatively, you could persist them to your bash profile.
 
 ## To-Dos
 
