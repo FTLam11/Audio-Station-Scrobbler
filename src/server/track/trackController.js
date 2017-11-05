@@ -5,7 +5,20 @@ const querystring = require('querystring');
 
 let controller = {};
 
+// save necessary params to local var
+// redirect to same track GET route
+// create new controller action for updateNowPlaying
 controller.create = (req, res, next) => {
+  request.post(req.body.options, req.body.dataString)
+    .then((lastfmres) => {
+      res.redirect('/updateNowPlaying');
+    })
+    .catch((err) => {
+      next(err);
+    });
+};
+
+controller.updateNowPlaying = (req, res, next) => {
   request.post(req.body.options, req.body.dataString)
     .then((lastfmres) => {
       res.json(lastfmres);
@@ -13,10 +26,5 @@ controller.create = (req, res, next) => {
     .catch((err) => {
       next(err);
     });
-  // create a scrobbling queue, since NAS submits 
-  // lyric requests for the currently playing song
-  // and the next song in playlist
-  // Last.fm uses 4 minutes as the time interval for scrobbles
 };
-
 module.exports = controller;

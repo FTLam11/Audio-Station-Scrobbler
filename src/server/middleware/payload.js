@@ -5,12 +5,12 @@ require('../../../env');
 let payload = {};
 
 // Build payload for track.scrobble and track.updateNowPlaying
-payload.build = function() {
+payload.build = function(method) {
   return (req, res, next) => {
     req.body.api_key = process.env.API_KEY;
     req.body.artist = req.query.artist;
     req.body.format = 'json';
-    req.body.method = 'track.scrobble';
+    req.body.method = method;
     req.body.sk = process.env.SK;
     req.body.timestamp = Math.floor(new Date() / 1000);
     req.body.track = req.query.title;

@@ -11,6 +11,9 @@ const stringify = require('../middleware/stringify');
 const options = require('../middleware/options');
 
 trackRouter.route(/\/q/)
-  .get(payload.build(), payload.squish(), sign(), stringify(), options(), controller.create)
+  .get(payload.build('track.scrobble'), payload.squish(), sign(), stringify(), options(), controller.create)
 
-module.exports = trackRouter; 
+trackRouter.route(/updateNowPlaying/)
+  .get(payload.build('track.updateNowPlaying'), payload.squish(), sign(), stringify(), options(), controller.updateNowPlaying)
+
+module.exports = trackRouter;

@@ -47,10 +47,10 @@ describe('(>")>Parse Token Middleware<("<)'.america, function() {
     res = httpMock.createResponse();
     let parseErr = new Error("Missing parameters for session request.");
     let next = function() { throw parseErr };
-    
+
     expect(function() {
       parseToken()(req, res, next)
     }).to.throw(parseErr);
     done();
-  });  
+  });
 });
