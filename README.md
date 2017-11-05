@@ -5,7 +5,7 @@ Not being able to scrobble tracks with Audio Station is no bueno. After brainsto
 I sniffed the network traffic while using Audio Station and noted HTTP request patterns during playback of each song. Here is the low-down:
 
 * Lyric modules are an Audio Station built-in feature. With a lyric module installed, Audio Station makes queries for each song and displays lyrics if found. A variety of [Synology Lyric modules](https://bitbucket.org/franklai/synologylyric/overview) are publically available. I ninja'd a new scrobble request into one of the lyric modules. My modified lyric module is found [here](https://github.com/FTLam11/lyrical_fronk).
-* This repository contains a simple Node server that saves a Last.FM session and scrobbles music. 
+* This repository contains a simple Node server that saves a Last.FM session and scrobbles music.
 
 ## I. Installing and Running Server Code
 
@@ -13,7 +13,7 @@ I sniffed the network traffic while using Audio Station and noted HTTP request p
 
 * Your Synology NAS must have NodeJS v4 or above installed. It can be installed via Package Center, or you can download the source code from [NodeJS](https://nodejs.org/en/download/) and include it in your $PATH.
 * My Synology NAS is running **DSM 6.02-8451 Update 9** and **Audio Station 6.02-3093**. I have not tested other versions of DSM and Audio Station, but I assume this scrobbler will work if Audio Station has the lyric plugin feature.
-* [SSH](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/system_terminal) must be enabled on your Synology NAS. 
+* [SSH](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/system_terminal) must be enabled on your Synology NAS.
 * Check t3h g00gles to find a suitable terminal client for your operating system. **You need root privileges for your Synology NAS.** Refer to this [tutorial](https://www.synology.com/en-us/knowledgebase/DSM/tutorial/General/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet) for an example.
 
 ### Cloning/Downloading Server Repository
@@ -28,9 +28,9 @@ I have no clue what your system environment is like, but I'll attempt to provide
 1. SSH into your NAS. Run `sudo -i` to switch to the root user. Navigate into the directory uploaded from the previous section.
 2. Install dependencies by running `npm install`. Start the server by running `npm start`.
 3. In DSM, go to **Control Panel** > **Task Scheduler**. You will create a task to automatically run the server whenever your NAS boots up.
-4. Click **Create** -> **Triggered Task** -> **User-defined script**. 
+4. Click **Create** -> **Triggered Task** -> **User-defined script**.
 5. In the **General** tab, enter a task name and then check the **Enabled** box.
-6. In the **Task Settings** tab, edit and paste the following: 
+6. In the **Task Settings** tab, edit and paste the following:
 
     `exec /usr/local/bin/node path_to_scrobbler_directory/bin/server.js`
 
@@ -50,7 +50,7 @@ This section explains how to obtain an API account and get the necessary informa
 
 To use the Last.fm API, [sign up for an account](http://www.last.fm/api/account/create). The only field that matters is **Callback URL**. Set **Callback URL** to:
 
-    local_address_of_your_nas:3000
+    http://local_address_of_your_nas:3000
 
 Zang, now you have your own **API key** and **API secret**.
 
@@ -89,7 +89,7 @@ Restart your NAS in order for the scrobbling server to automatically run in the 
 
 * Update "Now Playing"
 * Add stop script
-* Implement scrobbling delay 
+* Implement scrobbling delay
 
 ## Contribution
 
