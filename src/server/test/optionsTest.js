@@ -3,6 +3,7 @@
 const expect = require('chai').expect;
 const colors = require('colors');
 const httpMock = require('node-mocks-http');
+const stringify = require('../middleware/stringify');
 const options = require('../middleware/options');
 
 let req = {};
@@ -15,6 +16,7 @@ describe('(>")>Options Middleware<("<)'.america, function() {
       url: '/tracks/q?artist=truongs&title=nuocnam'
     });
     res = httpMock.createResponse();
+    stringify()(req, res, () => {});
     options()(req, res, () => {});
     done();
   });
