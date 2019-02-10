@@ -13,4 +13,4 @@ const options = require('../middleware/options');
 trackRouter.route(/\/q/)
   .get(payload.build(), payload.squish(), sign(), stringify(), options(), controller.create)
 
-module.exports = trackRouter; 
+module.exports = trackRouter;
