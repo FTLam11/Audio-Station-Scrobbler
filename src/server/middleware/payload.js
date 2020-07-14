@@ -1,11 +1,9 @@
-'use strict';
-
 require('../../../env');
 
-let payload = {};
+const payload = {};
 
 // Build payload for track.scrobble and track.updateNowPlaying
-payload.build = function() {
+payload.build = function () {
   return (req, res, next) => {
     req.body.api_key = process.env.API_KEY;
     req.body.artist = req.query.artist;
@@ -19,21 +17,21 @@ payload.build = function() {
 };
 
 // Concatenate payload into raw api signature
-payload.squish = function() {
+payload.squish = function () {
   return (req, res, next) => {
     let raw = '';
 
-    for (var key in req.body) {
-      if (req.body.hasOwnProperty(key) && key != 'format' && key != 'secret') {
+    Object.keys(req.body).forEach((key) => {
+      if (key !== 'format' && key !== 'secret') {
         raw += key + req.body[key];
-      };
-    };
+      }
+    });
 
     if (req.body.secret) {
       raw += req.body.secret;
     } else {
       raw += process.env.SECRET;
-    };
+    }
 
     req.body.api_sig = raw;
     next();

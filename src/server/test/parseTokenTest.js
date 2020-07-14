@@ -1,55 +1,53 @@
-'use strict';
-
-const expect = require('chai').expect;
-const colors = require('colors');
+require('colors');
+const { expect } = require('chai');
 const httpMock = require('node-mocks-http');
 const parseToken = require('../middleware/parseToken');
 
 let req = {};
 let res = {};
 
-describe('(>")>Parse Token Middleware<("<)'.america, function() {
-  beforeEach(function(done) {
+describe('(>")>Parse Token Middleware<("<)'.america, () => {
+  beforeEach((done) => {
     req = httpMock.createRequest({
       method: 'GET',
-      url: '/auth/q?api_key=123&token=456&secret=789'
+      url: '/auth/q?api_key=123&token=456&secret=789',
     });
     res = httpMock.createResponse();
     parseToken()(req, res, () => {});
     done();
   });
 
-  it('should parse the API key', function(done) {
+  it('should parse the API key', (done) => {
     expect(req.body.api_key).to.equal('123');
     done();
   });
 
-  it('should parse the token', function(done) {
+  it('should parse the token', (done) => {
     expect(req.body.token).to.equal('456');
     done();
   });
 
-  it('should parse the secret', function(done) {
+  it('should parse the secret', (done) => {
     expect(req.body.secret).to.equal('789');
     done();
   });
 
-  it('should set the API method', function(done) {
+  it('should set the API method', (done) => {
     expect(req.body.method).to.equal('auth.getSession');
     done();
   });
 
-  it('throws an error if any parameters are missing', function(done) {
+  it('throws an error if any parameters are missing', (done) => {
     req = httpMock.createRequest({
       method: 'GET',
-      url: '/auth/q?api_key=123&token=456'
+      url: '/auth/q?api_key=123&token=456',
     });
     res = httpMock.createResponse();
-    let parseErr = new Error("Missing parameters for session request.");
-    let next = function() { throw parseErr };
+    const parseErr = new Error('Missing parameters for session request.');
+    const next = function () { throw parseErr; };
 
-    expect(function() {
-      parseToken()(req, res, next)
+    expect(() => {
+      parseToken()(req, res, next);
     }).to.throw(parseErr);
     done();
   });

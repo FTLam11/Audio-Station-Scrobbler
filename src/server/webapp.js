@@ -1,11 +1,9 @@
-'use strict';
-
 const express = require('express');
 const routes = require('./routes');
 const middleware = require('./middleware/globalware');
 const errorHandler = require('./middleware/error');
 
-let app = express();
+const app = express();
 
 app.set('x-powered-by', false);
 

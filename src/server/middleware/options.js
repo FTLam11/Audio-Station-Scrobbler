@@ -1,7 +1,5 @@
-'use strict';
-
 // Set options for POST request to Last.FM
-module.exports = function() {
+module.exports = function () {
   return (req, res, next) => {
     req.body.options = {
       hostname: 'ws.audioscrobbler.com',
@@ -9,8 +7,8 @@ module.exports = function() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Content-Length': Buffer.byteLength(req.body.dataString)
-      }
+        'Content-Length': Buffer.byteLength(req.body.dataString),
+      },
     };
     next();
   };

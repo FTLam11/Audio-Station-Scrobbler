@@ -1,9 +1,7 @@
-'use strict';
-
 const crypto = require('crypto');
 
 // Hash the api signature
-module.exports = function() {
+module.exports = function () {
   return (req, res, next) => {
     req.body.api_sig = crypto
       .createHash('md5')

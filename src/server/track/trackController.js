@@ -1,9 +1,6 @@
-'use strict';
-
 const request = require('../../util/request');
-const querystring = require('querystring');
 
-let controller = {};
+const controller = {};
 
 controller.create = (req, res, next) => {
   request.post(req.body.options, req.body.dataString)
