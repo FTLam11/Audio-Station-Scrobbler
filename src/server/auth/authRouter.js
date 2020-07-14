@@ -5,9 +5,8 @@ const controller = require('./authController');
 const parseToken = require('../middleware/parseToken');
 const payload = require('../middleware/payload');
 const sign = require('../middleware/signature');
-const env = require('../middleware/loadEnv');
 
 authRouter.route(/\/q/)
-  .get(parseToken(), payload.squish(), sign(), controller.session, env(), controller.end);
+  .get(parseToken(), payload.squish(), sign(), controller.session, controller.end);
 
 module.exports = authRouter;
