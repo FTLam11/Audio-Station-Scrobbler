@@ -1,13 +1,11 @@
-'use strict';
-
 // Parse request for Last.FM auth token
-let validParams = function(queryObj) {
-  return queryObj.api_key &&
-             queryObj.token &&
-             queryObj.secret;
+const validParams = function (queryObj) {
+  return queryObj.api_key
+             && queryObj.token
+             && queryObj.secret;
 };
 
-module.exports = function() {
+module.exports = function () {
   return (req, res, next) => {
     if (validParams(req.query)) {
       req.body.api_key = req.query.api_key;
@@ -16,7 +14,7 @@ module.exports = function() {
       req.body.secret = req.query.secret;
       next();
     } else {
-      next(new Error("Missing parameters for session request."));
-    };
+      next(new Error('Missing parameters for session request.'));
+    }
   };
 };

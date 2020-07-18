@@ -1,6 +1,4 @@
-'use strict';
-
-let config = {};
+const config = {};
 
 config.port = 3000;
 config.api_key = process.env.API_KEY;

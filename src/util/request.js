@@ -1,13 +1,11 @@
-'use strict';
-
 const http = require('http');
 
-let request = {};
+const request = {};
 
-request.get = function(url) {
+request.get = function (url) {
   return new Promise((resolve, reject) => {
-    let req = http.get(url, (res) => {
-      let body = [];
+    const req = http.get(url, (res) => {
+      const body = [];
 
       res.on('data', (chunk) => body.push(chunk));
       res.on('end', () => resolve(body.join('')));
@@ -17,14 +15,14 @@ request.get = function(url) {
   });
 };
 
-request.post = function(options, data) {
+request.post = function (options, data) {
   return new Promise((resolve, reject) => {
-    let req = http.request(options, (res) => {
+    const req = http.request(options, (res) => {
       res.setEncoding('utf8');
-      console.log(`STATUS: ${res.statusCode}`);
-      console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
+      console.debug(`STATUS: ${res.statusCode}`);
+      console.debug(`HEADERS: ${JSON.stringify(res.headers)}`);
 
-      let body = [];
+      const body = [];
 
       res.on('data', (chunk) => body.push(chunk));
       res.on('end', () => resolve(body.join('')));

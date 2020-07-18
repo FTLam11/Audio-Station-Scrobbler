@@ -1,13 +1,11 @@
-'use strict'
+const log = {};
 
-let log = {};
-
-let logger = (method, string) => {
+const logger = (method, string) => {
   if (method === 'error') {
-    console.log(`[ ❌ scrawble ERROR ❌ ] ${string}`)
+    console.error(`[ ❌ scrawble ERROR ❌ ] ${string}`);
   } else {
     console.log(`[ ✨ scrawble LOG ✨ ] ${string}`);
-  };
+  }
 };
 
 log.log = (string) => logger('log', string);
