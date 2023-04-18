@@ -35,7 +35,7 @@
     "eslint": "^7.4.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
-    "mocha": "^8.4.0",
+    "mocha": "^10.2.0",
     "node-mocks-http": "^1.5.6"
   }
 }
